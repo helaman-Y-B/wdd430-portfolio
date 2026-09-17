@@ -32,6 +32,11 @@ export async function getProjects(type?: string): Promise<Project[]> {
 // This function gets a single project by its ID from the database.
 export async function getProjectById(projectId: number): Promise<Project | null> {
   const { rows } = await sql<Project>`SELECT * FROM projects WHERE "projectId" = ${projectId}`;
+
+  if (rows.length === 0) {
+    return null; // Return null if no project is found with the given ID.
+  }
+
   return rows[0] || null;
 }
 /**
