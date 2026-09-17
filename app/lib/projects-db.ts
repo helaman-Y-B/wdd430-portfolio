@@ -28,3 +28,19 @@ export async function getProjects(type?: string): Promise<Project[]> {
  * url: string
  * ]
  */
+
+// This function gets a single project by its ID from the database.
+export async function getProjectById(projectId: number): Promise<Project | null> {
+  const { rows } = await sql<Project>`SELECT * FROM projects WHERE projectId = ${projectId}`;
+  return rows[0] || null;
+}
+/**
+ * Data returns as follows:
+ * [
+ * projectId: ID,
+ * projectName: string,
+ * description: string,
+ * technologies: string[],
+ * url: string
+ * ]
+ */
