@@ -12,10 +12,10 @@ export interface Project {
 // This function retrieves all projects from the database.
 export async function getProjects(type?: string): Promise<Project[]> {
   if (type) {
-    const { rows } = await sql<Project>`SELECT * FROM projects WHERE type = ${type} ORDER BY projectId DESC`;
+    const { rows } = await sql<Project>`SELECT * FROM projects WHERE "type" = ${type} ORDER BY "projectId" DESC`;
     return rows;
   }
-  const { rows } = await sql<Project>`SELECT * FROM projects ORDER BY projectId DESC`;
+  const { rows } = await sql<Project>`SELECT * FROM projects ORDER BY "projectId" DESC`;
   return rows;
 }
 /**
@@ -31,7 +31,7 @@ export async function getProjects(type?: string): Promise<Project[]> {
 
 // This function gets a single project by its ID from the database.
 export async function getProjectById(projectId: number): Promise<Project | null> {
-  const { rows } = await sql<Project>`SELECT * FROM projects WHERE projectId = ${projectId}`;
+  const { rows } = await sql<Project>`SELECT * FROM projects WHERE "projectId" = ${projectId}`;
   return rows[0] || null;
 }
 /**
