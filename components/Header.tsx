@@ -2,7 +2,7 @@ import Link from "next/link";
 
 export default function Header() {
   return (
-    <header className="bg-gray-800 text-white body-font border-b border-gray-200">
+    <header className="bg-background text-white body-font border-b border-gray-200">
       <div id="header-title" className="text-2xl font-bold text-center p-10">
         Helamã Yamashita Barbour
       </div>
@@ -11,7 +11,7 @@ export default function Header() {
           <li className="w-full">
             <Link
               href="/"
-              className="block w-full p-5 hover:bg-white hover:text-gray-900"
+              className="block w-full p-5 hover:bg-gray-100 hover:text-gray-900"
             >
               Home
             </Link>
@@ -19,7 +19,7 @@ export default function Header() {
           <li className="w-full">
             <Link
               href="/about"
-              className="block w-full p-5 hover:bg-white hover:text-gray-900"
+              className="block w-full p-5 hover:bg-gray-100 hover:text-gray-900"
             >
               About
             </Link>

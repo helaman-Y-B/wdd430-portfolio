@@ -12,7 +12,7 @@ export default function ProjectCard({
   link,
 }: ProjectCardProps) {
   return (
-    <article className="p-4 border-4 border-gray-800 bg-white-600 rounded hover:shadow-lg transition-shadow duration-300 shadow-black/40">
+    <article className="bg-gray-100 p-4 border-4 border-gray-800 bg-white-600 rounded hover:shadow-lg transition-shadow duration-300 shadow-black/40">
       <h3 className="text-xl font-bold mb-2">{title}</h3>
       <p className="text-gray-700 mb-3">{description}</p>
       <p className="text-sm text-gray-600">
